@@ -1,8 +1,7 @@
-import React, {FormEvent, useState} from 'react';
+import React from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import TextField from '@material-ui/core/TextField';
-import {useHistory} from "react-router";
+import TextLoop from "react-text-loop";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,33 +22,22 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Home() {
   const classes = useStyles();
-  const history = useHistory();
-  const [address, setAddress] = useState('');
-
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    history.push(`/address/${address}`);
-  }
 
   return (
     <div className={classes.hero}>
       <div className={classes.heroBlock}>
         <Typography className={classes.heroText}
                     variant={'h2'}>
-          Navigate Solana at High Speed
+          Explore Solana {' '}
+          <TextLoop children={["Transactions", "DeFi", "Accounts", "Stables", "Fees", "Activity"]}
+                    interval={1200}
+                    springConfig={{ stiffness: 180, damping: 15 }}/>
         </Typography>
         <Typography className={classes.heroText}
                     variant={'h5'}
                     color={'textSecondary'}>
-          Explore and Manage Solana Assets
+          View the Solana Ecosystem
         </Typography>
-        <form noValidate autoComplete="off" onSubmit={submit}>
-          <TextField value={address}
-                     onInput={e => {setAddress((e.target as HTMLTextAreaElement).value)}}
-                     label="Enter Solana Address"
-                     type="search"
-                     variant="outlined" />
-        </form>
       </div>
     </div>
   );
