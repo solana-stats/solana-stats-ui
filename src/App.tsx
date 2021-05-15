@@ -4,7 +4,6 @@ import Nav from './components/nav/nav';
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Home from "./pages/home/home";
-import Account from './pages/account/account';
 import {
   BrowserRouter as Router,
   Switch,
@@ -54,7 +53,6 @@ function App() {
             <div className={'content'}>
               <Switch>
                 <Route path={'/'} exact={true} component={Home}/>
-                <Route path={'/address/:address'} component={Account}/>
               </Switch>
             </div>
           </div>
