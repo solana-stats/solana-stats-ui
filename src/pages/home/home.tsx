@@ -43,7 +43,7 @@ export default function Home() {
         <Typography className={classes.heroText}
                     variant={'h5'}
                     color={'textSecondary'}>
-          Get unique metrics about the Solana Ecosystemgit 
+          Get unique metrics about the Solana Ecosystem
         </Typography>
         <Button className={classes.heroButton}
                 variant="contained"
