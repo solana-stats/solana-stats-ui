@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
 import Brightness4Icon from '@material-ui/icons/Brightness4';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius: '50%',
     },
     logo: {
-      maxHeight: 35
+      maxHeight: 64
     }
   }),
 );

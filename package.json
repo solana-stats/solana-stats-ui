@@ -2,12 +2,6 @@
   "name": "solana-stats",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "source-map-explorer": "^2.2.2",
-    "source-map-loader": "^0.2.4"
-  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -25,10 +19,14 @@
     "bs58": "^4.0.1",
     "firebase": "^8.3.2",
     "gzipper": "^4.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-text-loop": "^2.3.0",
+    "source-map-explorer": "^2.2.2",
+    "source-map-loader": "^0.2.4",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
