@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Nav from './components/nav/nav';
+import Nav from './components/nav';
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Home from "./pages/home/home";
+import Home from "./pages/home";
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-
+import Stats from "./pages/stats";
 
 const darkTheme = createMuiTheme({
   palette: {
@@ -26,40 +26,24 @@ const darkTheme = createMuiTheme({
   },
 });
 
-const lightTheme = createMuiTheme({
-  palette: {
-    type: 'light',
-    primary: {
-      main: '#aa51ea',
-    },
-    secondary: {
-      main: '#aa51ea',
-    },
-    background: {
-      default: '#f5f5f5',
-    }
-  },
-});
-
 function App() {
-  const [theme, setTheme] = useState(true)
-  const appliedTheme = createMuiTheme(theme ? darkTheme : lightTheme)
+  const appliedTheme = createMuiTheme(darkTheme)
   return (
-    <Router>
-      <ThemeProvider theme={appliedTheme}>
-        <CssBaseline/>
+      <Router>
+        <ThemeProvider theme={appliedTheme}>
+          <CssBaseline/>
           <div>
-            <Nav themeToggle={setTheme} theme={theme}/>
+            <Nav/>
             <div className={'content'}>
               <Switch>
                 <Route path={'/'} exact={true} component={Home}/>
+                <Route path={'/stats'} exact={true} component={Stats}/>
               </Switch>
             </div>
           </div>
-      </ThemeProvider>
-    </Router>
-
-);
+        </ThemeProvider>
+      </Router>
+  );
 }
 
 export default App;
