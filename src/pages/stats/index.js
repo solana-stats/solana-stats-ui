@@ -9,16 +9,16 @@ const fetchData = async (url) => {
 
 export default function Stats() {
 
-    const [chartsFetched, setChartsFetched] = useState([]);
+    const [chartsFetched, setChartsFetched] = useState(false);
 
     useEffect(() => {
         if (!chartsFetched) {
-            const tps = fetchData('https://api-solanastats.com/stats-bff/tps');
-            const pastDayTransactions = fetchData('https://api-solanastats.com/stats-bff/transactions/transaction?interval=H');
-            const pastDayFees = fetchData('https://api-solanastats.com/stats-bff/fee');
-            const numSerum = fetchData('https://api-solanastats.com/stats-bff/transactions/serum?interval=H');
-            const fees = fetchData('https://api-solanastats.com/stats-bff/transactions/fee?interval=H');
-            const numTransactions = fetchData('https://api-solanastats.com/stats-bff/transactions/transaction?interval=M');
+            const tps = fetchData('http://localhost:8081/stats-bff/tps');
+            const pastDayTransactions = fetchData('http://localhost:8081/stats-bff/transactions/transaction?interval=H');
+            const pastDayFees = fetchData('http://localhost:8081/stats-bff/fee');
+            const numSerum = fetchData('http://localhost:8081/stats-bff/transactions/serum?interval=H');
+            const fees = fetchData('http://localhost:8081/stats-bff/transactions/fee?interval=H');
+            const numTransactions = fetchData('http://localhost:8081/stats-bff/transactions/transaction?interval=M');
 
             Promise.all([tps, pastDayTransactions, pastDayFees, numSerum, fees, numTransactions]).then((values) => {
                 console.log(values);
