@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import StatsChart from './../../components/statsChart';
 import './stats.css'
+import {Skeleton} from "@material-ui/lab";
 
 const fetchData = async (url) => {
     const response = await fetch(url);
@@ -31,10 +32,10 @@ export default function Stats() {
 
     return (
         <div className={'view'}>
-            {data[1] ? <StatsChart title={'24hr Transactions'} data={data[1]}/> : <div/> }
-            {data[3] ? <StatsChart title={'24hr Serum Transactions'} data={data[3]}/> : <div/> }
-            {data[4] ? <StatsChart title={'24hr Fees'} data={data[4]}/> : <div/> }
-            {data[5] ? <StatsChart title={'Recent Transactions'} data={data[5]}/> : <div/> }
+            {data[1] ? <StatsChart title={'24hr Transactions'} data={data[1]}/> : <Skeleton height={450}/> }
+            {data[3] ? <StatsChart title={'24hr Serum Transactions'} data={data[3]}/> : <Skeleton height={450}/> }
+            {data[4] ? <StatsChart title={'24hr Fees'} data={data[4]}/> : <Skeleton height={450}/> }
+            {data[5] ? <StatsChart title={'Recent Transactions'} data={data[5]}/> : <Skeleton height={450}/> }
         </div>
     )
 }
