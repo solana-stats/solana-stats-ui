@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import StatsChart from "../../components/statsChart";
 import './stats.css'
 
 const fetchData = async (url) => {
@@ -11,41 +10,6 @@ const fetchData = async (url) => {
 export default function Stats() {
 
     const [chartsFetched, setChartsFetched] = useState([]);
-
-    const data = [
-        {
-            "time": 1622437200,
-            "value": 10121051
-        },
-        {
-            "time": 1622523600,
-            "value": 68591381
-        },
-        {
-            "time": 1622610000,
-            "value": 71371074
-        },
-        {
-            "time": 1622696400,
-            "value": 69510604
-        },
-        {
-            "time": 1622782800,
-            "value": 73308712
-        },
-        {
-            "time": 1622869200,
-            "value": 72146391
-        },
-        {
-            "time": 1622955600,
-            "value": 72073883
-        },
-        {
-            "time": 1623042000,
-            "value": 61844641
-        }
-    ];
 
     useEffect(() => {
         if (!chartsFetched) {
@@ -61,7 +25,7 @@ export default function Stats() {
                 setChartsFetched(values);
             })
         }
-    });
+    }, [chartsFetched]);
 
     return (
         <div className={'view'}>

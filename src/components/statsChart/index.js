@@ -77,7 +77,7 @@ export default function StatsChart(props) {
             setWidth(ref?.current?.container?.clientWidth ?? width)
             setChartCreated(chart)
         }
-    });
+    }, [chartCreated, props.data, width]);
 
     useEffect(() => {
         chartCreated && chartCreated.resize(ref.current.offsetWidth, 450)
